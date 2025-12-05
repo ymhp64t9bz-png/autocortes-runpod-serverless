@@ -1,0 +1,45 @@
+# AnimeCut - Ignorar arquivos temporários e outputs
+
+# Outputs gerados
+outputs/*.mp4
+outputs/*.zip
+
+# Arquivos temporários do Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Ambientes virtuais
+venv/
+env/
+ENV/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Arquivos temporários de vídeo
+*.tmp
+*.temp
+temp_*
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Uploads temporários
+uploads/*.mp4
+uploads/*.mkv
+uploads/*.avi
+uploads/*.mov

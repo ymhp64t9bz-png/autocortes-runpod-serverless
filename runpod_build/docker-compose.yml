@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  autocortes:
+    build: .
+    image: autocortes-serverless:latest
+    container_name: autocortes-dev
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - CUDA_VISIBLE_DEVICES=0
+    volumes:
+      - ./app:/app
+      - ./models:/app/models
+      - ./output:/app/output
+    ports:
+      - "8000:8000"
+    command: python handler.py
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
